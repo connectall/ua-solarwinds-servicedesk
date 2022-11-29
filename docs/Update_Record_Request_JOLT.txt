@@ -1,0 +1,42 @@
+//update request
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "fields": ""
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "*": "configuration_item.&",
+      "category": "configuration_item.category.name",
+      "subcategory": "configuration_item.subcategory.name",
+      "assignee": "configuration_item.assignee.email",
+      "default_assignee": "configuration_item.default_assignee.email",
+      "requester": "configuration_item.requester.email",
+      "created_by": "configuration_item.created_by.email",
+      "resolved_by": "configuration_item.resolved_by.email",
+      "site": "configuration_item.site.name",
+      "department": "configuration_item.department.name"
+    }
+  }, {
+    "operation": "remove",
+    "spec": {
+      "configuration_item": {
+        "Service Desk": "",
+        "": ""
+      }
+    }
+  },
+
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "sla_violations": "=toList",
+      "cc": "=toList",
+      "is_service_request": "=toBoolean",
+      "user_saw_all_comments": "=toBoolean"
+    }
+  }
+ ]

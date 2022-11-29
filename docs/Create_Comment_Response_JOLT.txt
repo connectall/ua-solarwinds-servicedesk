@@ -1,0 +1,41 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "id": "commentId",
+      "user": {
+        "email": "commentAuthor"
+      },
+      "body": "commentBody",
+      "created_at": "createdDate",
+      "updated_at": "updatedDate",
+      "is_private": "commentVisibility"
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "commentId": "&",
+      "commentAuthor": "&",
+      "commentBody": "&",
+      "createdDate": "&",
+      "updatedDate": "&",
+      "commentVisibility": {
+        "false": {
+          "#true": "commentVisibility"
+        },
+        "true": {
+          "#false": "commentVisibility"
+        }
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "commentId": "=toString",
+      "commentAuthor": "=toString",
+      "commentVisibility": "=toBoolean"
+    }
+  }
+  ]

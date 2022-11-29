@@ -1,0 +1,104 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "*": {
+        "id": "result.[&1].&",
+        "number": "result.[&1].fields.&",
+        "name": "result.[&1].fields.&",
+        "title": "result.[&1].fields.&",
+        "description": "result.[&1].fields.&",
+        "description_no_html": "result.[&1].fields.&",
+        "state": "result.[&1].fields.&",
+        "priority": "result.[&1].fields.&",
+        "change_plan": "result.[&1].fields.&",
+        "rollback_plan": "result.[&1].fields.&",
+        "test_plan": "result.[&1].fields.&",
+        "plan": "result.[&1].fields.&",
+        "build": "result.[&1].fields.&",
+        "deploy": "result.[&1].fields.&",
+        "category": {
+          "name": "result.[&2].fields.category"
+        },
+        "subcategory": {
+          "name": "result.[&2].fields.subcategory"
+        },
+        "assignee": {
+          "email": "result.[&2].fields.assignee"
+        },
+        "default_assignee": {
+          "email": "result.[&2].fields.default_assignee"
+        },
+        "requester": {
+          "email": "result.[&2].fields.requester"
+        },
+        "creator": {
+          "email": "result.[&2].fields.creator"
+        },
+        "cc": "result.[&1].fields.&",
+        "due_at": "result.[&1].fields.&",
+        "sla_violations": "result.[&1].fields.&",
+        "number_of_comments": "result.[&1].fields.&",
+        "user_saw_all_comments": "result.[&1].fields.&",
+        "is_service_request": "result.[&1].fields.&",
+        "created_by": {
+          "email": "result.[&2].fields.created_by"
+        },
+        "created_at": "result.[&1].fields.&",
+        "updated_at": "result.[&1].fields.&",
+        "resolved_by": {
+          "email": "result.[&2].fields.resolved_by"
+        },
+        "resolution_description": "result.[&1].fields.&",
+        "resolution_code": "result.[&1].fields.&",
+        "site": {
+          "name": "result.[&2].fields.site"
+        },
+        "department": {
+          "name": "result.[&2].fields.department"
+        },
+        "href": "result.[&1].fields.&",
+        "href_account_domain": "result.[&1].fields.&",
+        "origin": "result.[&1].fields.&",
+        "price": "result.[&1].fields.&",
+        "show_price": "result.[&1].fields.&",
+        "currency": "result.[&1].fields.&",
+        "planned_start_at": "result.[&1].fields.&",
+        "planned_end_at": "result.[&1].fields.&",
+        "change_type": "result.[&1].fields.&",
+        "type": "result.[&1].fields.&",
+        "deleted": "result.[&1].fields.&"
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "totalrecords": "=size(@(1,result))",
+      "result": {
+        "*": {
+          "id": "=toString"
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "totalrecords": "&",
+      "result": {
+        "*": {
+          "id": "result.[&1].&",
+          "fields": "result.[&1].&"
+        }
+      }
+    }
+  },
+  {
+    "operation": "default",
+    "spec": {
+      "totalrecords": 0,
+      "result": []
+    }
+   }
+ ]

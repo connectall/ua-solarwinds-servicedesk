@@ -1,0 +1,67 @@
+1) The API Request and Response payloads are in JSON or XML format. ConnectALL can use JOLT Transformation to handle payloads. 
+------> No Risk
+
+
+2) It uses token based authentication.
+	eg: X-Samanage-Authorization: Bearer asdfnaospdifa;sikofaodfasfaf
+-----> No Risk
+
+
+3) The date format is ISO8601 format. We can query date and hour time only. Meaning in UA we should use current time in the url instead of last modified time.
+	i.e: 2022-11-09T13
+-----> Risk
+
+
+4) Metadata:
+	A) It has no project scope 
+
+	B) It has issue type scope like ServiceDesk
+		i) Incidents
+		ii) Problems 
+		iii) Changes
+		iv) Change Catalog
+		v) Releases
+		vi) Solutions
+		vii) Service Catalog
+		viii) Configuration Management (CMDB).
+-----> No risk
+
+
+i) To create incident; name is enough
+ii) To create problem: name and requester is needed and for updating problem: name is enough
+iii) To create change: name, requester and priority is needed and updating change: name is enough
+iv) To create change catalog: name is enough
+v) To create release: name and requester is needed
+vi) To create solution: name and description is needed and for updating solution: name is enough
+vii) To create catalog item: name, description and category is needed and for updating catalog item: name is enough
+viii) To create configuration item: name is enough
+
+
+5) Because of API Limitation we cannot do Flow filter
+-----> Risk
+
+
+6) Comments is doable for this UA
+
+
+7) API Configuration:
+	i) Query Modified Records: ${Service Desk}.json?query=updated_at:${current-time}
+	ii) Read Record By ID: ${Service Desk}/${recordId}.json
+	iii) Create Record: ${Service Desk}.json
+	iv) Update Record: ${Service Desk}/${recordId}.json
+	v) Retrieve Comments: ${Service Desk}/${recordId}/comments.json
+	vi) Save Comment: ${Service Desk}/${recordId}/comments.json
+
+
+8) Needed to execute a query in the muledb to increase the token character size.
+sql server:  alter table fav_connection_login_options alter column val varchar(4000);
+mysql: USE muledb;
+		ALTER TABLE fav_connection_login_options 
+		MODIFY COLUMN val varchar(4000);
+
+
+9) There are standard fields published in the documentation. 
+	i) In jira, during value mapping for status: To Do can only be mapped to New state of SolarWinds
+
+
+

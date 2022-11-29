@@ -1,0 +1,77 @@
+//create response
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "id": "&",
+      "number": "fields.&",
+      "name": "fields.&",
+      "title": "fields.&",
+      "description": "fields.&",
+      "description_no_html": "fields.&",
+      "state": "fields.&",
+      "priority": "fields.&",
+      "change_plan": "fields.&",
+      "rollback_plan": "fields.&",
+      "test_plan": "fields.&",
+      "plan": "fields.&",
+      "deploy": "fields.&",
+      "build": "fields.&",
+      "deleted": "fields.&",
+      "category": {
+        "name": "fields.category"
+      },
+      "subcategory": {
+        "name": "fields.subcategory"
+      },
+      "assignee": {
+        "email": "fields.assignee"
+      },
+      "default_assignee": {
+        "email": "fields.default_assignee"
+      },
+      "requester": {
+        "email": "fields.requester"
+      },
+      "creator": {
+        "email": "fields.creator"
+      },
+      "due_at": "fields.&",
+      "sla_violations": "fields.&",
+      "number_of_comments": "fields.&",
+      "user_saw_all_comments": "fields.&",
+      "is_service_request": "fields.&",
+      "created_by": {
+        "email": "fields.created_by"
+      },
+      "resolved_by": {
+        "email": "fields.resolved_by"
+      },
+      "resolution_description": "fields.&",
+      "resolution_code": "fields.&",
+      "href": "fields.&",
+      "href_account_domain": "fields.&",
+      "created_at": "fields.&",
+      "updated_at": "fields.&",
+      "site": {
+        "name": "fields.site"
+      },
+      "department": {
+        "name": "fields.department"
+      },
+      "cc": "fields.&",
+      "origin": "fields.&",
+      "planned_start_at": "fields.&",
+      "planned_end_at": "fields.&",
+      "type": {
+        "name": "fields.type"
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "id": "=toString"
+    }
+  }
+ ]
